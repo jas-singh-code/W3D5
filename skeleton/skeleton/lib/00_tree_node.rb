@@ -46,23 +46,28 @@ class PolyTreeNode
     def inspect
         "#<stack:#{self.value}>"
     end
-
+    debugger
     def dfs(target)
         debugger
         if self.value == target
             return self
         end
         debugger
-        if !self.children.empty?
+        until self.children.empty?
             debugger
             self.children.each do |child| 
                 result = child.dfs(target)
-                return result
+                if result != nil
+                    return child
+                else 
+                    self.remove_child(child)
+                    debugger
+                end
+                debugger
+                # return result
             end
-            debugger
         end
-        debugger
-    nil
+        nil
     end
 end
  n1 = PolyTreeNode.new("A")
