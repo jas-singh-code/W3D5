@@ -18,14 +18,42 @@ class PolyTreeNode
     end
 
     def parent=(new_parent)
-        unless @parent.nil?
-            @parent.children.delete(@value)
-        end
-        @parent= new_parent
-        unless @parent.children.include?(@value)
-            @parent.children << @value
-        end
+        
     end
     
 end
 
+# n1 = PolyTreeNode.new("A")
+# n2 = PolyTreeNode.new("B")
+# n3 = PolyTreeNode.new("C")
+# n1.parent= nil
+
+
+# # n1= PolyTreeNode.new("root1")
+# # n2= PolyTreeNode.new("root2")
+# # n3= PolyTreeNode.new("root3")
+# if @parent == nil
+#     @parent = nil
+#     return   
+# end
+
+# if @parent != nil && @parent.children.include?(self)  #old parent
+#     @parent.children.delete(self)
+# end
+
+
+# if @parent != nil && !(@parent.children.include?(self))
+#     @parent = new_parent   #new parent being re-assigned
+#     @parent.children << self
+# end
+
+
+
+# # unless @parent.nil?
+# #     @parent.children.delete(self)
+# # end
+# # @parent= new_parent
+# # if !(@parent.children.include?(self)) && !@parent.nil?
+# #     @parent.children << self
+# # end
+# # nil
